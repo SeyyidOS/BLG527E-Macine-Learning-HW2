@@ -45,3 +45,13 @@ def covariance2(x: np.ndarray, mu: np.ndarray) -> np.ndarray:
     n_samples, n_features = x.shape[0], x.shape[1]
 
     return x.T @ x / (n_samples - 1) - mu.T @ mu
+
+
+def variance(x: np.ndarray, mu: np.ndarray) -> np.ndarray:
+    n_samples, n_features = x.shape[0], x.shape[1]
+    squared_sum = np.zeros((1, n_features))
+    for data in x:
+        x_c = data - mu
+        squared_sum += x_c ** 2
+    squared_sum[np.where(squared_sum == 0)] = 1e-20
+    return squared_sum / n_samples
