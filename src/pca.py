@@ -6,14 +6,28 @@ import numpy as np
 
 class PCA:
     def __init__(self, n_components: int):
+        """
+        Constructor for PCA
+        :param n_components: Number of components that will used
+        """
         self.n_components = n_components
         self.x_pca = None
 
     @staticmethod
     def standardize(x):
+        """
+        Standardize the given input data
+        :param x: (n_samples, n_features) data matrix
+        :return: (n_samples, n_features) standardized data matrix
+        """
         return (x - mean(x)) / np.sqrt(variance(x, mean(x)))
 
     def fit_transform(self, x):
+        """
+        Step by step applies the PCA to the input
+        :param x: (n_samples, n_features) data matrix
+        :return: None
+        """
         # Step 1 - Standardize:
         x = self.standardize(x)
 
@@ -31,6 +45,11 @@ class PCA:
         self.x_pca = x @ components
 
     def visualize(self, y):
+        """
+        Visualizer for the pca components
+        :param y: (n_samples) labels
+        :return:
+        """
         np.random.seed(42)
         selected_indices = np.random.choice(range(self.x_pca.shape[0]), size=200, replace=False)
 
