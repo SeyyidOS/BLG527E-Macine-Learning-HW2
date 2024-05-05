@@ -57,7 +57,6 @@ class PCA:
         scatter = plt.scatter(self.x_pca[:, 0], self.x_pca[:, 1], c=y, cmap='tab10', alpha=0.6)
         plt.colorbar(scatter, ticks=range(10))
 
-        # Annotate randomly selected 200 points
         for i in selected_indices:
             plt.annotate(str(int(y[i])), (self.x_pca[i, 0], self.x_pca[i, 1]), fontsize=9)
 
