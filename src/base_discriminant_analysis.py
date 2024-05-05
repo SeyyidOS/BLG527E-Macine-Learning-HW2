@@ -73,4 +73,8 @@ class BaseDiscriminantAnalysis(ABC):
         axs[1].set_ylabel('Feature 2')
         axs[1].grid(True)
 
+        plt.tight_layout()
+
+        plt.savefig(f'../../figures/{self.name}.png')
+
         plt.show()

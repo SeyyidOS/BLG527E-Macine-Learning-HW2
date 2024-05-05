@@ -63,6 +63,19 @@ class PCA:
 
         plt.xlabel('Principal Component 1')
         plt.ylabel('Principal Component 2')
-        plt.title('PCA Projection of opdigits Dataset')
+        plt.title('PCA')
         plt.grid(True)
+        plt.tight_layout()
+        plt.savefig('../../figures/pca.png')
         plt.show()
+
+
+if __name__ == '__main__':
+    # Read the data
+    data = np.loadtxt('../dataset/data.txt', delimiter=",")
+    X = data[:, :-1]
+    y = data[:, -1]
+
+    pca = PCA(n_components=2)
+    pca.fit_transform(X)
+    pca.visualize(y)
