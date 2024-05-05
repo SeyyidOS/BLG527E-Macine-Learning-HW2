@@ -63,7 +63,7 @@ Contributions are welcome! To contribute:
 Please follow the coding standards and include tests for any new features.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENCE](LICENCE) file for details.
 
 ## Acknowledgements
 - The course staff at Istanbul Technical University for providing the course materials.
